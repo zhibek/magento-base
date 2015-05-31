@@ -1,0 +1,18 @@
+{
+  "site": {
+    "name": "magento-base",
+    "environment": "dev",
+    "host": "magento-base.dev",
+    "root_path": "/var/www",
+    "public_path": "/var/www/magento"
+  },
+  "user": {
+    "name": "root"
+  },
+  "nginx": {},
+  "php-fpm": {},
+  "mysql": {},
+  "run_list": [
+    "role[web]"
+  ]
+}

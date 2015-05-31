@@ -1,0 +1,45 @@
+{
+  "name": "web",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "",
+  "default_attributes": {
+    "site": {
+      "name": "magento-base",
+      "environment": "vagrant",
+      "host": "magento-base.local",
+      "root_path": "/var/www",
+      "public_path": "/var/www/magento",
+      "database_name": "magento-base",
+      "database_username": "root",
+      "database_password": "0000"
+    },
+    "user": {
+      "name": "vagrant"
+    },
+    "nginx": {},
+    "php-fpm": {},
+    "mysql": {
+      "server_root_password": "0000",
+      "server_repl_password": "0000",
+      "server_debian_password": "0000",
+      "bind_address": "127.0.0.1",
+      "allow_remote_root": true,
+      "remove_anonymous_users": true,
+      "remove_test_database": true
+    }
+  },
+  "run_list": [
+    "recipe[apt]",
+    "recipe[build-essential]",
+    "recipe[runit]",
+    "recipe[openssl]",
+    "recipe[nginx]",
+    "recipe[redis2]",
+    "recipe[php-fpm]",
+    "recipe[composer]",
+    "recipe[nodejs]",
+    "recipe[mysql::server]",
+    "recipe[site]"
+  ]
+}

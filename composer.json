@@ -1,0 +1,25 @@
+{
+    "name": "zhibek/magento-base",
+    "description": "Magento (base setup)",
+    "authors": [
+        {
+            "name": "John Levermore",
+            "email": "john.levermore@zhibek.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "packages.firegento.com"
+        }
+    ],
+    "require": {
+        "bragento/magento-composer-installer": "~1",
+        "magento/core": "~1.9",
+        "firegento/magesetup": "~2"
+    },
+    "extra": {
+        "magento-root-dir": "magento",
+	"auto-append-gitignore": true
+    }
+}
